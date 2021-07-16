@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Add New Book!</title>
+</head>
+<body>
+<form action='/book/new' method='POST'>
+  <label>Title: <input type='text' th:field="${book.title}"></label><br />
+  <label>Author: <input type='text' th:field="${book.author}"></label><br />
+  <label>ISBN: <input type='text' th:field="${book.isbn}"></label><br />
+  <label>Type: <select th:field="${book.type}">
+    <option th:each="type : ${bookTypes}" th:value="${type}" th:text="${type}"></option>
+  </select></label>
+  <input type='submit'>
+</form>
+</body>
+</html>
